@@ -24,7 +24,7 @@ RUN    apk update \
 	&& cd /tmp/dependencies \
 	&& wget -O jmeter.zip ${JMETER_DOWNLOAD_URL} \
 	&& mkdir -p /opt  \
-	&& unzip /tmp/dependencies/jmeter \
+	&& unzip /tmp/dependencies/jmeter -d /opt/jmeter \
 	&& rm -rf /tmp/dependencies
 
 # TODO: plugins (later)
