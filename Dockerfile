@@ -2,17 +2,17 @@
 # https://github.com/hhcordero/docker-jmeter-server/blob/master/Dockerfile
 FROM alpine:3.9
 
-MAINTAINER Just van den Broecke<just@justobjects.nl>
+MAINTAINER Dima Red<dmredchenko@gmail.com>
 
 ARG JMETER_VERSION="5.1.1"
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
 ENV	JMETER_BIN	${JMETER_HOME}/bin
-ENV	JMETER_DOWNLOAD_URL  https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz
+ENV	JMETER_DOWNLOAD_URL  https://downloader.disk.yandex.ru/disk/9629a0bd4090277797f6d884a0a51343171a902a72db2e9c9cd639072de1d52f/5d273bb8/Y8oQKoPBEd1laduvNXhFJWv-y-Qle2B0QWfQWRyWmm9ekO6y2Z1QBBNQ1W3eVYmR97IxxjoUyHX5i28wxogcYw%3D%3D?uid=842923925&filename=apache-jmeter-5.1.1.zip&disposition=attachment&hash=&limit=0&content_type=application%2Fzip&fsize=71465975&hid=f2acc16170ab55c268d1dde29ba84c47&media_type=compressed&tknv=v2&etag=ffd35724d56e8232529538d77d213693
 
 # Install extra packages
 # See https://github.com/gliderlabs/docker-alpine/issues/136#issuecomment-272703023
 # Change TimeZone TODO: TZ still is not set!
-ARG TZ="Europe/Amsterdam"
+ARG TZ="Europe/Moscow"
 RUN    apk update \
 	&& apk upgrade \
 	&& apk add ca-certificates \
@@ -21,9 +21,9 @@ RUN    apk update \
 	&& apk add --no-cache nss \
 	&& rm -rf /var/cache/apk/* \
 	&& mkdir -p /tmp/dependencies  \
-	&& curl -L --silent ${JMETER_DOWNLOAD_URL} >  /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz  \
+	&& curl -L --silent ${JMETER_DOWNLOAD_URL} >  /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.zip  \
 	&& mkdir -p /opt  \
-	&& tar -xzf /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.tgz -C /opt  \
+	&& unzip /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.zip \
 	&& rm -rf /tmp/dependencies
 
 # TODO: plugins (later)
