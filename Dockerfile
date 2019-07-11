@@ -34,7 +34,7 @@ RUN    apk update \
 ENV PATH $PATH:$JMETER_BIN
 
 # Entrypoint has same signature as "jmeter" command
-COPY chmod +x entrypoint.sh /
+COPY sudo entrypoint.sh /
 
 WORKDIR	${JMETER_HOME}
 
