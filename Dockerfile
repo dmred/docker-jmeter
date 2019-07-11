@@ -21,7 +21,7 @@ RUN    apk update \
 	&& apk add --no-cache nss \
 	&& rm -rf /var/cache/apk/* \
 	&& mkdir -p /tmp/dependencies  \
-	&& curl -L --silent ${JMETER_DOWNLOAD_URL} >  /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.zip  \
+	&& wget -O jmeter.zip '${JMETER_DOWNLOAD_URL}'\
 	&& mkdir -p /opt  \
 	&& unzip /tmp/dependencies/apache-jmeter-${JMETER_VERSION}.zip \
 	&& rm -rf /tmp/dependencies
