@@ -7,7 +7,7 @@ MAINTAINER Dima Red<dmredchenko@gmail.com>
 ARG JMETER_VERSION="5.1.1"
 ENV JMETER_HOME /opt/jmeter/apache-jmeter-${JMETER_VERSION}
 ENV	JMETER_BIN	${JMETER_HOME}/bin
-ENV	JMETER_DOWNLOAD_URL  https://downloader.disk.yandex.ru/disk/9629a0bd4090277797f6d884a0a51343171a902a72db2e9c9cd639072de1d52f/5d273bb8/Y8oQKoPBEd1laduvNXhFJWv-y-Qle2B0QWfQWRyWmm9ekO6y2Z1QBBNQ1W3eVYmR97IxxjoUyHX5i28wxogcYw%3D%3D?uid=842923925&filename=apache-jmeter-5.1.1.zip&disposition=attachment&hash=&limit=0&content_type=application%2Fzip&fsize=71465975&hid=f2acc16170ab55c268d1dde29ba84c47&media_type=compressed&tknv=v2&etag=ffd35724d56e8232529538d77d213693
+ENV	JMETER_DOWNLOAD_URL  https://downloader.disk.yandex.ru/disk/4a0986947bc9308a3ec3aac0e43351672eec3ef48a611bea0ae38a4de21642a7/5d2c75dd/Y8oQKoPBEd1laduvNXhFJWv-y-Qle2B0QWfQWRyWmm9ekO6y2Z1QBBNQ1W3eVYmR97IxxjoUyHX5i28wxogcYw%3D%3D?uid=842923925&filename=apache-jmeter-5.1.1.zip&disposition=attachment&hash=&limit=0&content_type=application%2Fzip&owner_uid=842923925&fsize=71465975&hid=f2acc16170ab55c268d1dde29ba84c47&media_type=compressed&tknv=v2&etag=ffd35724d56e8232529538d77d213693
 
 # Install extra packages
 # See https://github.com/gliderlabs/docker-alpine/issues/136#issuecomment-272703023
