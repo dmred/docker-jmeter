@@ -31,7 +31,7 @@ RUN    apk update \
 # && unzip -oq "/tmp/dependencies/JMeterPlugins-*.zip" -d $JMETER_HOME
 
 # Set global PATH such that "jmeter" command is found
-ENV PATH $PATH:$JMETER_BIN
+ENV PATH ${PATH}:${JMETER_BIN}
 
 # Entrypoint has same signature as "jmeter" command
 COPY entrypoint.sh /
